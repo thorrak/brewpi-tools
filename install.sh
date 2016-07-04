@@ -271,7 +271,8 @@ find "$webPath" -type d -exec chmod g+rwxs {} \;||die
 ############
 echo -e "\n***** Downloading most recent BrewPi codebase... *****"
 cd "$installPath"
-sudo -u brewpi git clone https://github.com/BrewPi/brewpi-script "$installPath"||die
+# Using the /thorrak/ repo instead to support esp8266
+sudo -u brewpi git clone https://github.com/thorrak/brewpi-script "$installPath"||die
 cd "$webPath"
 sudo -u www-data git clone https://github.com/BrewPi/brewpi-www "$webPath"||die
 

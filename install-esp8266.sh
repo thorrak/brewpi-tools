@@ -166,7 +166,7 @@ echo -e "Done downloading firmware!"
 echo -e "\n* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *"
 echo -e "Review the log above for any errors, otherwise, your software download and environment setup is complete!"
 echo -e "\nThe next step is to actually flash the firmware to your device. Unhook any other USB-to-serial bridges, hook the ESP8266 device up via a USB cable to your Raspberry Pi, then do the following:"
-echo -e "\nesptool --port /dev/ttyUSB0 write_flash -fm=dio -fs=32m 0x00000 $installPath/bin/$firmwareName)"
+echo -e "\nesptool --port /dev/ttyUSB0 write_flash -fm=dio -fs=32m 0x00000 $installPath/bin/$firmwareName"
 
 
 

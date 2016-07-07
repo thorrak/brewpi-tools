@@ -23,7 +23,7 @@ firmwareName = "brewpi-esp8266.v0.1.wifi.bin"
 
 # Make sure only root can run our script
 if [[ $EUID -ne 0 ]]; then
-   echo "This script must be run as root: sudo ./install.sh" 1>&2
+   echo "This script must be run as root: sudo ./install-esp8266.sh" 1>&2
    exit 1
 fi
 

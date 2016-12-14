@@ -94,7 +94,8 @@ if [ $(($nowTime - $lastUpdate)) -gt 604800 ] ; then
 fi
 sudo apt-get install -y apache2 libapache2-mod-php5 php5-cli php5-common php5-cgi php5 git-core build-essential python-dev python-pip pastebinit || die
 echo -e "\n***** Installing/updating required python packages via pip... *****\n"
-sudo pip install pyserial psutil simplejson configobj gitpython --upgrade
+# TODO - Change the following line to utilize requirements.txt files
+sudo pip install pyserial psutil simplejson configobj gitpython zeroconf --upgrade
 echo -e "\n***** Done processing BrewPi dependencies *****\n"
 
 

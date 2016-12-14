@@ -176,12 +176,16 @@ def check_repo(repo):
     print "You are on branch " + localBranch
 
     if not localBranch in ["master", "legacy"] and not userInput:
-        print "Your checked out branch is not master, our stable release branch."
-        choice = raw_input("It is highly recommended that you switch to the stable master branch."
-                          " Would you like to do that? [Y/n]:")
-        if any(choice == x for x in ["", "yes", "Yes", "YES", "yes", "y", "Y"]):
-            print "Switching branch to master"
-            newBranch = "master"
+        print "This branch is not legacy or master, and may therefore contain untested code."
+        print "If you want to switch to the legacy or master branch, please do so manually."
+
+        # Disabling the branch management (for now) - Thorrak
+        # print "Your checked out branch is not master, our stable release branch."
+        # choice = raw_input("It is highly recommended that you switch to the stable master branch."
+        #                   " Would you like to do that? [Y/n]:")
+        # if any(choice == x for x in ["", "yes", "Yes", "YES", "yes", "y", "Y"]):
+        #     print "Switching branch to master"
+        #     newBranch = "master"
 
 
     ### Get available remotes
@@ -335,7 +339,7 @@ print ""
 
 if os.geteuid() != 0:
     print "This update script should be run as root."
-    print "Try running it gain with sudo, exiting..."
+    print "Try running it again with sudo, exiting..."
     exit(1)
 
 checkForUpdates()

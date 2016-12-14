@@ -347,7 +347,7 @@ print ""
 
 changed = False
 scriptPath = '/home/brewpi'
-webPath = '/var/www'
+webPath = '/var/www/html'
 
 print "\n\n*** Updating BrewPi script repository ***"
 

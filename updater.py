@@ -418,21 +418,23 @@ else:
     print "If you encounter problems, you can start it manually with:"
     print "sudo %s/utils/runAfterUpdate.sh" % scriptPath
 
-choice = raw_input("\nThe update script can automatically check your controller firmware version and " +
-                   "program it with the latest release on GitHub, would you like to do this now? [Y/n]:")
-if any(choice == x for x in ["", "yes", "Yes", "YES", "yes", "y", "Y"]):
-    # start as a separate python process, or it will not use the updated modules
-    updateScript = os.path.join(scriptPath, 'utils', 'updateFirmware.py')
-    if userInput:
-        p = subprocess.Popen("python {0} --beta".format(updateScript), shell=True)
-    else:
-        p = subprocess.Popen("python {0} --silent".format(updateScript), shell=True)
-    p.wait()
-    result = p.returncode
-    if(result == 0):
-        print "Firmware update done"
-else:
-    print "Skipping controller update"
+# choice = raw_input("\nThe update script can automatically check your controller firmware version and " +
+#                    "program it with the latest release on GitHub, would you like to do this now? [Y/n]:")
+# if any(choice == x for x in ["", "yes", "Yes", "YES", "yes", "y", "Y"]):
+#     # start as a separate python process, or it will not use the updated modules
+#     updateScript = os.path.join(scriptPath, 'utils', 'updateFirmware.py')
+#     if userInput:
+#         p = subprocess.Popen("python {0} --beta".format(updateScript), shell=True)
+#     else:
+#         p = subprocess.Popen("python {0} --silent".format(updateScript), shell=True)
+#     p.wait()
+#     result = p.returncode
+#     if(result == 0):
+#         print "Firmware update done"
+# else:
+#     print "Skipping controller update"
+
+print "Skipping controller update - Currently this must be done manually"
 
 startBrewPi(webPath)
 print "\n\n*** Done updating BrewPi! ***\n"

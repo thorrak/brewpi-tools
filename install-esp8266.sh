@@ -158,7 +158,7 @@ echo -e "\n***** Downloading most recent ESP8266 firmware... *****"
 sudo -u brewpi git clone https://github.com/thorrak/brewpi-esp8266 "$installPath"||die
 cd "$installPath"
 
-firmwareName="brewpi-esp8266.v0.8.wifi.bin"
+firmwareName="brewpi-esp8266.v0.9.wifi.bin"
 
 
 echo -e "Done downloading firmware!"

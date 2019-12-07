@@ -60,7 +60,7 @@ exec 2>&1
 ### Check for network connection
 ###########
 echo -e "\nChecking for Internet connection..."
-ping -c 3 github.com &> /dev/null
+wget -q --spider --no-check-certificate github.com &>> install.log
 if [ $? -ne 0 ]; then
     echo "------------------------------------"
     echo "Could not ping github.com. Are you sure you have a working Internet connection?"
